@@ -64,5 +64,15 @@ namespace Files_Organizer
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            customFolderPanel.Enabled = checkBox1.Checked;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

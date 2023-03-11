@@ -37,13 +37,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.customFolderPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.extName = new System.Windows.Forms.TextBox();
+            this.addFolderNameLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.customFolderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +119,7 @@
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "Custom Folders?";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label3
             // 
@@ -137,82 +140,84 @@
             this.dataGridView1.Size = new System.Drawing.Size(352, 191);
             this.dataGridView1.TabIndex = 9;
             // 
-            // label4
+            // customFolderPanel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Enabled = false;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 147);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Add Folder Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(129, 144);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(235, 144);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(343, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 24);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.applyBtn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(128, 125);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Extension Name";
+            this.customFolderPanel.Controls.Add(this.label6);
+            this.customFolderPanel.Controls.Add(this.label5);
+            this.customFolderPanel.Controls.Add(this.textBox2);
+            this.customFolderPanel.Controls.Add(this.extName);
+            this.customFolderPanel.Controls.Add(this.addFolderNameLabel);
+            this.customFolderPanel.Controls.Add(this.button1);
+            this.customFolderPanel.Enabled = false;
+            this.customFolderPanel.Location = new System.Drawing.Point(28, 111);
+            this.customFolderPanel.Name = "customFolderPanel";
+            this.customFolderPanel.Size = new System.Drawing.Size(392, 78);
+            this.customFolderPanel.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Enabled = false;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(247, 124);
+            this.label6.Location = new System.Drawing.Point(222, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
-            this.label6.TabIndex = 13;
+            this.label6.TabIndex = 18;
             this.label6.Text = "Folder Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(103, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Extension Name";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(210, 38);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 17;
+            // 
+            // extName
+            // 
+            this.extName.Location = new System.Drawing.Point(104, 38);
+            this.extName.Name = "extName";
+            this.extName.Size = new System.Drawing.Size(100, 20);
+            this.extName.TabIndex = 16;
+            // 
+            // addFolderNameLabel
+            // 
+            this.addFolderNameLabel.AutoSize = true;
+            this.addFolderNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addFolderNameLabel.Location = new System.Drawing.Point(-2, 41);
+            this.addFolderNameLabel.Name = "addFolderNameLabel";
+            this.addFolderNameLabel.Size = new System.Drawing.Size(104, 13);
+            this.addFolderNameLabel.TabIndex = 15;
+            this.addFolderNameLabel.Text = "Add Folder Name";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(318, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 24);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 564);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.customFolderPanel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dir);
             this.Controls.Add(this.dirName);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.applyBtn);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.label2);
@@ -221,6 +226,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.customFolderPanel.ResumeLayout(false);
+            this.customFolderPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,12 +244,13 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel customFolderPanel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox extName;
+        private System.Windows.Forms.Label addFolderNameLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 
