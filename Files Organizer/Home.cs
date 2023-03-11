@@ -12,6 +12,7 @@ namespace Files_Organizer
 {
     public partial class Home : Form
     {
+        string folderPath = null;
         public Home()
         {
             InitializeComponent();
@@ -19,7 +20,20 @@ namespace Files_Organizer
 
         private void applyBtn_Click(object sender, EventArgs e)
         {
+            string[] files = Directory.GetFiles(folderPath);
 
+            foreach (string file in files)
+            {
+                string extension = Path.GetExtension(file);
+                string newFolder = Path.Combine(folderPath, extension.TrimStart('.'));
+                if (!Directory.Exists(newFolder))
+                {
+                    Directory.CreateDirectory(newFolder);
+                }
+                string newFilePath = Path.Combine(newFolder, Path.GetFileName(file));
+                File.Move(file, newFilePath);
+            }
+            MessageBox.Show("Files have been organized.");
         }
 
         private void browseBtn_Click(object sender, EventArgs e)
@@ -29,7 +43,7 @@ namespace Files_Organizer
                 DialogResult result = folderBrowserDialog1.ShowDialog();
                 if(result == DialogResult.OK)
                 {
-                dirName.Text = folderBrowserDialog1.SelectedPath;
+                folderPath = dirName.Text = folderBrowserDialog1.SelectedPath;
                 dirName.Visible= true;
                 dir.Visible= true;
                 }
