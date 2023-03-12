@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 55);
+            this.label1.Location = new System.Drawing.Point(96, 194);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 39);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 143);
+            this.label2.Location = new System.Drawing.Point(52, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(279, 20);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // browseBtn
             // 
-            this.browseBtn.Location = new System.Drawing.Point(306, 143);
+            this.browseBtn.Location = new System.Drawing.Point(337, 268);
             this.browseBtn.Name = "browseBtn";
             this.browseBtn.Size = new System.Drawing.Size(75, 23);
             this.browseBtn.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // applyBtn
             // 
-            this.applyBtn.Location = new System.Drawing.Point(137, 219);
+            this.applyBtn.Location = new System.Drawing.Point(168, 344);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(109, 33);
             this.applyBtn.TabIndex = 3;
@@ -80,7 +80,7 @@
             // dirName
             // 
             this.dirName.AutoSize = true;
-            this.dirName.Location = new System.Drawing.Point(124, 182);
+            this.dirName.Location = new System.Drawing.Point(155, 307);
             this.dirName.Name = "dirName";
             this.dirName.Size = new System.Drawing.Size(111, 13);
             this.dirName.TabIndex = 4;
@@ -90,7 +90,7 @@
             // dir
             // 
             this.dir.AutoSize = true;
-            this.dir.Location = new System.Drawing.Point(73, 182);
+            this.dir.Location = new System.Drawing.Point(104, 307);
             this.dir.Name = "dir";
             this.dir.Size = new System.Drawing.Size(52, 13);
             this.dir.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 328);
+            this.ClientSize = new System.Drawing.Size(442, 564);
             this.Controls.Add(this.dir);
             this.Controls.Add(this.dirName);
             this.Controls.Add(this.applyBtn);
