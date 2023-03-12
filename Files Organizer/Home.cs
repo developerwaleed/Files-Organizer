@@ -60,7 +60,7 @@ namespace Files_Organizer
         private void applyBtn_Click(object sender, EventArgs e)
         {
 
-            string[] basicFolders = { "Audio", "Images","Videos", "Compressed", "Documents", "Programs" };
+            string[] basicFolders = { "Audio", "Images", "Videos", "Compressed", "Documents", "Programs" };
             foreach (string basicFolder in basicFolders)
             {
                 string newFolder = Path.Combine(folderPath, basicFolder);
@@ -94,11 +94,11 @@ namespace Files_Organizer
             using (var folderBrowserDialog1 = new FolderBrowserDialog())
             {
                 DialogResult result = folderBrowserDialog1.ShowDialog();
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
-                folderPath = dirName.Text = folderBrowserDialog1.SelectedPath;
-                dirName.Visible= true;
-                dir.Visible= true;
+                    folderPath = dirName.Text = folderBrowserDialog1.SelectedPath;
+                    dirName.Visible = true;
+                    dir.Visible = true;
                 }
                 else
                 {
@@ -111,33 +111,6 @@ namespace Files_Organizer
         private void Home_Load(object sender, EventArgs e)
         {
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-<<<<<<< HEAD
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-=======
-        private void label4_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void extName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBoxFolderName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
->>>>>>> e803ebf224a1352cc4bb92f8d88cc1a7fc982755
     }
+
 }
