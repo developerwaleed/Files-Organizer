@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Xml.Linq;
+using Files_Organizer.Properties;
+using System.Linq;
+using System.Collections.Specialized;
+
 namespace Files_Organizer
 {
     public partial class Home : Form
     {
+        List<string> list = new List<string>();
+        DataTable extensionFolderTable = new DataTable();
+
         string folderPath = null;
         public Home()
         {
@@ -57,7 +64,6 @@ namespace Files_Organizer
 
         private void Home_Load(object sender, EventArgs e)
         {
-
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -65,14 +71,20 @@ namespace Files_Organizer
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            customFolderPanel.Enabled = checkBox1.Checked;
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
             
         }
+
+        private void extName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxFolderName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
