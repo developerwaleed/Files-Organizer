@@ -25,22 +25,68 @@ namespace Files_Organizer
             InitializeComponent();
         }
 
+        private string GetBasicFolderForExtension(string extension)
+        {
+            switch (extension)
+            {
+                case "mp3":
+                case "wav":
+                case "aac":
+                    return "audio";
+                case "jpg":
+                case "jpeg":
+                case "png":
+                case "svg":
+
+                    return "images";
+                case "zip":
+                case "rar":
+                    return "compressed";
+                case "doc":
+                case "docx":
+                case "pdf":
+                case "pptx":
+                    return "documents";
+                case "mp4":
+                    return "Videos";
+                case "exe":
+                case "msi":
+                    return "programs";
+                default:
+                    return "other";
+            }
+        }
+
         private void applyBtn_Click(object sender, EventArgs e)
         {
-            string[] files = Directory.GetFiles(folderPath);
 
-            foreach (string file in files)
+            string[] basicFolders = { "Audio", "Images","Videos", "Compressed", "Documents", "Programs" };
+            foreach (string basicFolder in basicFolders)
             {
-                string extension = Path.GetExtension(file);
-                string newFolder = Path.Combine(folderPath, extension.TrimStart('.'));
+                string newFolder = Path.Combine(folderPath, basicFolder);
                 if (!Directory.Exists(newFolder))
                 {
                     Directory.CreateDirectory(newFolder);
                 }
-                string newFilePath = Path.Combine(newFolder, Path.GetFileName(file));
+            }
+
+            string[] files = Directory.GetFiles(folderPath);
+
+            foreach (string file in files)
+            {
+                string extension = Path.GetExtension(file).TrimStart('.');
+                string basicFolder = GetBasicFolderForExtension(extension);
+                string extensionFolder = Path.Combine(folderPath, basicFolder, extension);
+                if (!Directory.Exists(extensionFolder))
+                {
+                    Directory.CreateDirectory(extensionFolder);
+                }
+                string newFilePath = Path.Combine(extensionFolder, Path.GetFileName(file));
                 File.Move(file, newFilePath);
             }
+
             MessageBox.Show("Files have been organized.");
+
         }
 
         private void browseBtn_Click(object sender, EventArgs e)
